@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js Dev Server",
+      "runtimeExecutable": "/Users/severinsilvestri/node/bin/node",
+      "runtimeArgs": ["/Users/severinsilvestri/studio-silvestri/start-dev.js"],
+      "port": 3000
+    },
+    {
+      "name": "Next.js Production Server",
+      "runtimeExecutable": "/Users/severinsilvestri/node/bin/node",
+      "runtimeArgs": ["/Users/severinsilvestri/studio-silvestri/node_modules/next/dist/bin/next", "start"],
+      "port": 3000
+    }
+  ]
+}
