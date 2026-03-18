@@ -44,21 +44,38 @@
   }
 
   /* ============================================================
-     2. Dropdown toggle on mobile (click-based)
-        On desktop, hover is handled by CSS
+     2. Dropdown — click-based on ALL screen sizes (no CSS hover)
      ============================================================ */
   var dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+
+  function closeAllDropdowns() {
+    document.querySelectorAll('.nav-dropdown.open').forEach(function (d) {
+      d.classList.remove('open');
+    });
+  }
+
   dropdownToggles.forEach(function (toggle) {
     toggle.addEventListener('click', function (e) {
-      // Only handle click toggle on mobile (hamburger visible)
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        var parent = toggle.closest('.nav-dropdown');
-        if (parent) {
-          parent.classList.toggle('open');
-        }
-      }
+      e.preventDefault();
+      e.stopPropagation();
+      var parent = toggle.closest('.nav-dropdown');
+      if (!parent) return;
+      var isOpen = parent.classList.contains('open');
+      closeAllDropdowns();
+      if (!isOpen) parent.classList.add('open');
     });
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      closeAllDropdowns();
+    }
+  });
+
+  // Close dropdown on ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAllDropdowns();
   });
 
   /* ============================================================

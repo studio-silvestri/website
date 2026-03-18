@@ -122,7 +122,7 @@ ul {
 }
 
 .nav-menu > a:hover,
-.nav-menu > .nav-dropdown:hover > .nav-dropdown-toggle {
+.nav-menu > .nav-dropdown.open > .nav-dropdown-toggle {
   color: var(--primary);
 }
 
@@ -171,14 +171,14 @@ ul {
   margin-top: 1px;
 }
 
-.nav-dropdown:hover .nav-dropdown-toggle::after {
+.nav-dropdown.open .nav-dropdown-toggle::after {
   transform: rotate(180deg);
 }
 
 .nav-dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 0;
   min-width: 220px;
   background: var(--white);
@@ -189,7 +189,6 @@ ul {
   z-index: 100;
 }
 
-.nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown.open .nav-dropdown-menu {
   display: block;
 }
