@@ -139,6 +139,15 @@
           if (!val || val.trim().length < 10) return 'Bitte schreib uns eine Nachricht (mind. 10 Zeichen).';
           return null;
         }
+      },
+      consent: {
+        el: document.getElementById('consent'),
+        errorEl: document.getElementById('consent-error'),
+        validate: function () {
+          var el = document.getElementById('consent');
+          if (!el || !el.checked) return 'Bitte stimme den Datenschutzhinweisen zu.';
+          return null;
+        }
       }
     };
 
