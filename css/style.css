@@ -435,12 +435,30 @@ select {
   padding-right: 40px;
 }
 
-input:focus,
+input:not([type="checkbox"]):focus,
 select:focus,
 textarea:focus {
   outline: none;
   border-color: var(--bordeaux);
   box-shadow: 0 0 0 3px rgba(92, 46, 62, 0.1);
+}
+
+/* Checkbox — alle anderen Regeln explizit überschreiben */
+input[type="checkbox"] {
+  appearance: checkbox !important;
+  -webkit-appearance: checkbox !important;
+  width: 18px !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  padding: 0 !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 3px !important;
+  background: white !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--bordeaux);
 }
 
 input.error,
