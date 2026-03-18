@@ -3,245 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
-  <title>Studio Silvestri – Beratung &amp; Konzepte für Gastronomie, Events &amp; Markenentwicklung</title>
-  <meta name="description" content="Studio Silvestri unterstützt Gastronomie-Unternehmer mit innovativen Konzepten, Beratung und operativer Struktur. Von der Idee bis zur Eröffnung.">
-  <meta name="keywords" content="Gastronomie Beratung, Restaurant Konzept, Foodtruck, Event Management, Markenstrategie, Zürich">
+  <title>Studio Silvestri – Beratung &amp; Konzepte für Gastronomie</title>
+  <meta name="description" content="Studio Silvestri unterstützt Gastronomie-Unternehmer mit innovativen Konzepten, Beratung und operativer Struktur. Von der Idee bis zur Eröffnung – mit Studio Next, Vitis Sylvestris und Foodtruck Connect.">
+  <meta name="keywords" content="Gastronomie Beratung, Restaurant Konzept, Foodtruck, Weinberatung, Zürich">
   <meta name="author" content="Studio Silvestri">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Studio Silvestri – Beratung &amp; Konzepte für Gastronomie, Events &amp; Markenentwicklung">
-  <meta property="og:description" content="Studio Silvestri unterstützt Gastronomie-Unternehmer mit innovativen Konzepten, Beratung und operativer Struktur. Von der Idee bis zur Eröffnung.">
+  <meta property="og:title" content="Studio Silvestri – Beratung &amp; Konzepte für Gastronomie">
+  <meta property="og:description" content="Studio Silvestri unterstützt Gastronomie-Unternehmer mit innovativen Konzepten, Beratung und operativer Struktur.">
   <meta property="og:url" content="https://www.studio-silvestri.ch">
   <meta property="og:type" content="website">
 
-  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Studio Silvestri",
-    "description": "Beratung & Konzepte für Gastronomie, Events & Markenentwicklung",
+    "description": "Beratung & Konzepte für Gastronomie",
     "url": "https://www.studio-silvestri.ch",
     "email": "info@studio-silvestri.ch",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Zürich",
+      "addressCountry": "CH"
+    },
     "areaServed": "CH",
     "priceRange": "$$"
   }
   </script>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- Checkbox fix: override global input styles -->
-  <style>
-    input[type="checkbox"] {
-      appearance: checkbox !important;
-      -webkit-appearance: checkbox !important;
-      width: 18px !important;
-      min-width: 18px !important;
-      height: 18px !important;
-      max-height: 18px !important;
-      padding: 0 !important;
-      border-radius: 3px !important;
-      box-shadow: none !important;
-      cursor: pointer !important;
-    }
-  </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header id="header">
     <div class="header-inner">
-      <a href="#hero" class="logo-text">STUDIO SILVESTRI</a>
-      <nav>
-        <a href="#hero">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">Über uns</a>
-        <a href="#kontakt" class="nav-cta">Kontakt</a>
+      <a href="/" class="logo-text">STUDIO SILVESTRI</a>
+
+      <nav class="nav-menu">
+        <a href="/">Home</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">Services</button>
+          <div class="nav-dropdown-menu">
+            <a href="studio-silvestri.html">Studio Silvestri</a>
+            <a href="studio-next.html">Studio Next</a>
+            <a href="vitis-sylvestris.html">Vitis Sylvestris</a>
+            <a href="foodtruck-connect.html">Foodtruck Connect</a>
+          </div>
+        </div>
+        <a href="kontakt.html" class="nav-cta">Kontakt</a>
       </nav>
-      <button class="hamburger" aria-label="Menu öffnen">
+
+      <button class="hamburger" aria-label="Menu öffnen" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
-    <div class="mobile-menu">
-      <a href="#hero">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">Über uns</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
+
+    <!-- Mobile overlay -->
+    <nav class="nav-overlay" aria-label="Mobile Navigation">
+      <a href="/">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <span class="mobile-section-label">Services</span>
+      <a href="studio-silvestri.html" class="mobile-sub-link">Studio Silvestri</a>
+      <a href="studio-next.html" class="mobile-sub-link">Studio Next</a>
+      <a href="vitis-sylvestris.html" class="mobile-sub-link">Vitis Sylvestris</a>
+      <a href="foodtruck-connect.html" class="mobile-sub-link">Foodtruck Connect</a>
+      <a href="kontakt.html" class="mobile-cta">Kontakt aufnehmen</a>
+    </nav>
   </header>
 
   <!-- HERO -->
-  <section id="hero">
+  <section class="hero" id="hero">
     <div class="hero-inner">
+      <span class="section-label">Gastronomieberatung Zürich</span>
       <h1>Vom Konzept zur<br>erfolgreichen Gastronomie</h1>
-      <p class="hero-sub">Du hast eine Vision für ein Restaurant, einen Foodtruck oder eine Bar? Wir unterstützen dich von der Konzeption bis zur Eröffnung — mit Branchenerfahrung, Netzwerk und Struktur.</p>
-      <a href="#kontakt" class="btn-primary">Lass dich beraten</a>
-      <p class="trust-badge">✓ Über 30 erfolgreiche Projekte</p>
+      <p class="hero-sub">Du hast eine Vision für ein Restaurant, einen Foodtruck oder eine Bar? Wir begleiten dich von der Konzeption bis zur Eröffnung — mit Branchenerfahrung, Netzwerk und Struktur.</p>
+      <a href="kontakt.html" class="btn-primary">Lass dich beraten</a>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>10+</strong>
+          <span>Jahre Erfahrung</span>
+        </div>
+        <div class="hero-stat">
+          <strong>30+</strong>
+          <span>Projekte begleitet</span>
+        </div>
+        <div class="hero-stat">
+          <strong>3</strong>
+          <span>Spezialbereiche</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services">
-    <div class="section-header">
-      <h2>Unsere Studios</h2>
-      <p>Drei spezialisierte Einheiten. Eine gemeinsame Mission: Dein Projekt zum Erfolg zu führen.</p>
-    </div>
-    <div class="services-grid">
-
-      <div class="card">
-        <div class="card-logo ss-logo">SS</div>
-        <h3>Studio Silvestri</h3>
-        <p>Die zentrale Plattform und Mutterfirma. Strategische Leitung, kreative Vision und operative Struktur für alle Projekte. Wir vernetzen Expert*innen und bündeln Know-how aus Gastronomie, Event und Markenentwicklung.</p>
+  <section id="services" class="services-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Was wir tun</span>
+        <h2>Unsere Studios</h2>
+        <p>Vier spezialisierte Einheiten. Eine gemeinsame Mission: Dein Gastronomieprojekt zum Erfolg zu führen.</p>
       </div>
 
-      <div class="card">
-        <div class="card-logo sn-logo">SN</div>
-        <h3>Studio Next</h3>
-        <p>Beratung und operative Unterstützung für junge Gastronomieunternehmen. Wir begleiten Start-ups bei der Konzeption, Organisation und Umsetzung — von der Eventplanung bis zur Betriebsstruktur.</p>
-      </div>
+      <div class="services-grid">
+        <a href="studio-silvestri.html" class="service-card">
+          <div class="card-icon icon-ss">SS</div>
+          <h3>Studio Silvestri</h3>
+          <p>Die zentrale Plattform und Mutterfirma. Strategische Leitung, kreative Vision und operative Gesamtstruktur für alle Projekte.</p>
+          <span class="card-link">Mehr erfahren</span>
+        </a>
 
-      <div class="card">
-        <div class="card-logo vs-logo">VS</div>
-        <h3>Vitis Sylvestris</h3>
-        <p>Weinberatung für Bars und Gastronomiebetriebe. Unser Fokus liegt auf der Gestaltung von Weinkarten, Schulung von Teams und der Vermittlung zwischen regionalen Winzerbetrieben und urbaner Gastroszene.</p>
-      </div>
+        <a href="studio-next.html" class="service-card">
+          <div class="card-icon icon-sn">SN</div>
+          <h3>Studio Next</h3>
+          <p>Beratung für junge Gastronomieunternehmen. Wir begleiten Start-ups von der Konzeption über den Businessplan bis zur Eröffnung.</p>
+          <span class="card-link">Mehr erfahren</span>
+        </a>
 
-      <div class="card">
-        <div class="card-logo fc-logo">FC</div>
-        <h3>Foodtruck Connect</h3>
-        <p>Plattform für Foodtruck-Betreiber und Veranstalter. Wir übernehmen Kommunikation, Planung und Vermittlung für ein gelungenes Street-Food-Erlebnis bei Events und Festivals.</p>
-      </div>
+        <a href="vitis-sylvestris.html" class="service-card">
+          <div class="card-icon icon-vs">VS</div>
+          <h3>Vitis Sylvestris</h3>
+          <p>Weinberatung für Bars und Gastronomiebetriebe. Weinkarten, Schulungen und Vernetzung zwischen Winzern und urbaner Gastro.</p>
+          <span class="card-link">Mehr erfahren</span>
+        </a>
 
+        <a href="foodtruck-connect.html" class="service-card">
+          <div class="card-icon icon-fc">FC</div>
+          <h3>Foodtruck Connect</h3>
+          <p>Plattform für Foodtruck-Betreiber und Veranstalter. Kommunikation, Planung und Vermittlung für Events und Festivals.</p>
+          <span class="card-link">Mehr erfahren</span>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
-    <div class="about-inner">
-      <h2>Über Studio Silvestri</h2>
-      <p>Studio Silvestri ist eine kreative und operative Beratungsplattform mit Sitz in Zürich. Unser Ziel ist es, innovative Lösungen in den Bereichen Gastronomie, Eventmanagement und Markenentwicklung zu schaffen — und junge Konzepte mit Erfahrung, Netzwerk und Struktur zu unterstützen.</p>
-      <p>Als Mutterfirma vereint Studio Silvestri mehrere spezialisierte Einheiten unter einem Dach, die jeweils eigene Schwerpunkte bedienen und gemeinsam für ganzheitliche Projektentwicklung stehen.</p>
-      <div class="values-grid">
-        <div class="value-item">
-          <strong>Exzellenz</strong>
-          <span>Qualität in jedem Detail</span>
+  <section id="about" class="about-section">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-label">Wer wir sind</span>
+          <h2>Erfahrung trifft Leidenschaft</h2>
+          <p>Studio Silvestri ist eine kreative und operative Beratungsplattform mit Sitz in Zürich. Unser Ziel ist es, innovative Lösungen in den Bereichen Gastronomie zu schaffen und junge Konzepte mit Erfahrung, Netzwerk und Struktur zu unterstützen.</p>
+          <p>Gegründet von Severin Silvestri vereint Studio Silvestri über ein Jahrzehnt Branchenerfahrung — von Michelin-Restaurants über Grossveranstaltungen bis hin zu eigenständigen Gastrokonzepten.</p>
+          <a href="ueber-uns.html" class="btn-outline" style="margin-top: 24px;">Mehr über uns</a>
         </div>
-        <div class="value-item">
-          <strong>Gastfreundschaft</strong>
-          <span>Der Mensch im Mittelpunkt</span>
-        </div>
-        <div class="value-item">
-          <strong>Verbindlichkeit</strong>
-          <span>Vertrauen und langfristiges Denken</span>
-        </div>
-        <div class="value-item">
-          <strong>Weiterentwicklung</strong>
-          <span>Stillstand ist keine Option</span>
+
+        <div class="quote-card">
+          <blockquote>"Gastronomie ist mehr als Essen und Trinken. Es ist die Kunst, Menschen zusammenzubringen und unvergessliche Momente zu schaffen."</blockquote>
+          <div class="quote-author">
+            <div class="author-avatar">SS</div>
+            <div class="author-info">
+              <strong>Severin Silvestri</strong>
+              <span>Gründer, Studio Silvestri</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="kontakt">
-    <div class="contact-inner">
-      <div class="section-header">
-        <h2>Lass dich beraten</h2>
-        <p>Schreib uns eine Nachricht, wir melden uns innerhalb von 24 Stunden.</p>
-      </div>
-
-      <form id="contact-form" action="https://formsubmit.co/info@studio-silvestri.ch" method="POST" novalidate>
-        <!-- FormSubmit.co Konfiguration -->
-        <input type="hidden" name="_subject" value="Neue Anfrage über studio-silvestri.ch">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.studio-silvestri.ch/danke.html">
-        <input type="hidden" name="_autoresponse" value="Danke für deine Anfrage! Wir haben deine Nachricht erhalten und melden uns in Kürze bei dir. — Studio Silvestri">
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Name *</label>
-            <input type="text" id="name" name="name" placeholder="Dein Name" required minlength="2" autocomplete="name">
-            <span class="field-error" id="name-error"></span>
-          </div>
-          <div class="form-group">
-            <label for="email">E-Mail *</label>
-            <input type="email" id="email" name="email" placeholder="deine@email.ch" required autocomplete="email">
-            <span class="field-error" id="email-error"></span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="telefon">Telefon</label>
-            <input type="tel" id="telefon" name="telefon" placeholder="+41 79 000 00 00" autocomplete="tel">
-          </div>
-          <div class="form-group">
-            <label for="company">Unternehmen / Betrieb</label>
-            <input type="text" id="company" name="company" placeholder="Dein Betrieb (optional)" autocomplete="organization">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="service">Betreff *</label>
-          <select id="service" name="service" required>
-            <option value="">Betreff wählen</option>
-            <option value="Studio Next – Gastronomieberatung">Studio Next – Gastronomieberatung</option>
-            <option value="Vitis Sylvestris – Weinberatung">Vitis Sylvestris – Weinberatung</option>
-            <option value="Foodtruck Connect">Foodtruck Connect</option>
-            <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
-            <option value="Zusammenarbeit / Partnerschaft">Zusammenarbeit / Partnerschaft</option>
-          </select>
-          <span class="field-error" id="service-error"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="nachricht">Nachricht *</label>
-          <textarea id="nachricht" name="nachricht" placeholder="Beschreib uns dein Projekt oder deine Frage..." required minlength="10" rows="5"></textarea>
-          <span class="field-error" id="nachricht-error"></span>
-        </div>
-
-        <div class="form-group form-consent">
-          <label class="consent-label">
-            <input type="checkbox" id="consent" name="_consent" required>
-            <span>Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen und bin damit einverstanden.</span>
-          </label>
-          <span class="field-error" id="consent-error"></span>
-        </div>
-
-        <button type="submit" class="btn-primary">Nachricht senden</button>
-
-        <div id="success-message" class="success-msg hidden">Danke! Wir melden uns in Kürze.</div>
-      </form>
-    </div>
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2>Bereit für das nächste Kapitel?</h2>
+    <p>Lass uns gemeinsam dein Gastronomieprojekt verwirklichen. Wir melden uns innerhalb von 24 Stunden.</p>
+    <a href="kontakt.html" class="btn-white">Lass dich beraten</a>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
+  <footer class="site-footer">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <span class="logo-text">STUDIO SILVESTRI</span>
-        <p>Beratung &amp; Konzepte für Gastronomie, Events &amp; Markenentwicklung</p>
+        <a href="/" class="logo-text">STUDIO SILVESTRI</a>
+        <p>Beratung &amp; Konzepte für Gastronomie in Zürich und der Schweiz.</p>
         <a href="mailto:info@studio-silvestri.ch">info@studio-silvestri.ch</a>
       </div>
-      <div class="footer-links">
+
+      <div class="footer-col">
+        <div class="footer-col-title">Navigation</div>
+        <a href="/">Home</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <a href="studio-silvestri.html">Studio Silvestri</a>
+        <a href="studio-next.html">Studio Next</a>
+        <a href="vitis-sylvestris.html">Vitis Sylvestris</a>
+        <a href="foodtruck-connect.html">Foodtruck Connect</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Rechtliches</div>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2025 Studio Silvestri. Alle Rechte vorbehalten.</p>
+      <p>&copy; 2026 Studio Silvestri. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
