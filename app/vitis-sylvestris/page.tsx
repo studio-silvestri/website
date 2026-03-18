@@ -116,9 +116,9 @@ export default function VitisSylvestrisPage() {
             <div className="space-y-6">
               <div className="border border-gray-200 p-8 border-l-2 border-l-bordeaux">
                 <p className="text-xl font-light text-anthracite italic leading-relaxed">
-                  "Ein guter Wein auf der Karte ist kein Zufall.
+                  &ldquo;Ein guter Wein auf der Karte ist kein Zufall.
                   Er ist das Ergebnis von Wissen, Netzwerk und dem Willen,
-                  Gäste wirklich zu begeistern."
+                  Gäste wirklich zu begeistern.&rdquo;
                 </p>
                 <p className="text-sm text-bordeaux mt-4 tracking-wide">
                   — Severin Silvestri, Sommelier

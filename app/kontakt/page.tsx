@@ -98,8 +98,8 @@ export default function KontaktPage() {
 
               <div className="border-t border-gray-200 pt-8">
                 <p className="text-sm text-anthracite/60 leading-relaxed italic">
-                  "Wir nehmen uns Zeit für jede Anfrage.
-                  Wir melden uns innerhalb von 48 Stunden."
+                  &ldquo;Wir nehmen uns Zeit für jede Anfrage.
+                  Wir melden uns innerhalb von 48 Stunden.&rdquo;
                 </p>
               </div>
             </div>
