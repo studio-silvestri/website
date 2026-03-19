@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website-Service – Professionelle Websites für Gastrobetriebe</title>
+  <meta name="description" content="Professionelle Websites für Restaurants, Bars und Foodtrucks in der Schweiz. Schnell, günstig und auf dein Konzept zugeschnitten — ab CHF 299.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Pricing Table */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 40px 0;
+    }
+
+    .pricing-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      background: var(--white);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .pricing-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--primary);
+      box-shadow: 0 4px 20px rgba(92,46,62,0.12);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .pricing-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .pricing-tagline {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .pricing-price {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .pricing-price span {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .pricing-delivery {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+      flex: 1;
+    }
+
+    .pricing-features li {
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.4;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pricing-card .btn-primary,
+    .pricing-card .btn-outline {
+      width: 100%;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .sorglos-box {
+      background: var(--light-gray);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      margin: 48px 0;
+    }
+
+    .sorglos-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .sorglos-box h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .sorglos-box .price-inline {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .sorglos-box p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="/" class="logo-text">STUDIO SILVESTRI</a>
+
+      <nav class="nav-menu">
+        <a href="/">Home</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">Services</button>
+          <div class="nav-dropdown-menu">
+            <a href="studio-silvestri.html">Studio Silvestri</a>
+            <a href="studio-next.html">Studio Next</a>
+            <a href="vitis-sylvestris.html">Vitis Sylvestris</a>
+            <a href="foodtruck-connect.html">Foodtruck Connect</a>
+            <a href="website-service.html" class="active">Website-Service</a>
+          </div>
+        </div>
+        <a href="kontakt.html" class="nav-cta">Kontakt</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Menu öffnen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="nav-overlay" aria-label="Mobile Navigation">
+      <a href="/">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <span class="mobile-section-label">Services</span>
+      <a href="studio-silvestri.html" class="mobile-sub-link">Studio Silvestri</a>
+      <a href="studio-next.html" class="mobile-sub-link">Studio Next</a>
+      <a href="vitis-sylvestris.html" class="mobile-sub-link">Vitis Sylvestris</a>
+      <a href="foodtruck-connect.html" class="mobile-sub-link">Foodtruck Connect</a>
+      <a href="website-service.html" class="mobile-sub-link">Website-Service</a>
+      <a href="kontakt.html" class="mobile-cta">Kontakt aufnehmen</a>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <span class="section-label">Digital Presence</span>
+    <h1>Websites für Gastrobetriebe</h1>
+    <p>Professionelle Websites für Restaurants, Bars und Foodtrucks in der Schweiz — schnell, günstig und auf dein Konzept zugeschnitten.</p>
+  </section>
+
+  <!-- INTRO + PRICING -->
+  <section class="service-detail-section">
+    <div class="section-inner">
+      <div class="service-detail-grid">
+
+        <!-- Content -->
+        <div class="service-detail-content">
+
+          <h2>Warum eine gute Website zählt</h2>
+          <p>Dein Gastrobetrieb verdient einen ersten digitalen Eindruck, der überzeugt. Noch bevor ein Gast dein Lokal betritt, entscheidet deine Website, ob er reserviert — oder weitersucht. Wir kennen die Gastrobranche und wissen, was Gäste online suchen: Öffnungszeiten, Speisekarte, Atmosphäre. Genau das liefern wir, klar und ohne Umwege.</p>
+          <p>Studio Silvestri entwickelt deine Website von Grund auf — auf dein Konzept zugeschnitten, mobil optimiert, SEO-freundlich und sofort einsatzbereit. Kein Baukastensystem, keine generischen Templates.</p>
+
+          <h2 style="margin-top: 48px;">Unsere Pakete</h2>
+
+          <div class="pricing-grid">
+
+            <!-- Light -->
+            <div class="pricing-card">
+              <div class="pricing-name">Light</div>
+              <div class="pricing-tagline">Online-Visitenkarte</div>
+              <div class="pricing-price">299<span> CHF</span></div>
+              <div class="pricing-delivery">Lieferzeit: 3–5 Arbeitstage</div>
+              <ul class="pricing-features">
+                <li>Onepager mit professionellem Design</li>
+                <li>Öffnungszeiten &amp; Adresse</li>
+                <li>Kontaktmöglichkeit</li>
+                <li>Google Maps Einbindung</li>
+                <li>Basis-SEO</li>
+                <li>Mobil optimiert</li>
+              </ul>
+              <a href="kontakt.html?service=website-service" class="btn-outline">Jetzt anfragen</a>
+            </div>
+
+            <!-- Pro (featured) -->
+            <div class="pricing-card featured">
+              <div class="pricing-badge">Beliebteste Wahl</div>
+              <div class="pricing-name">Pro</div>
+              <div class="pricing-tagline">Digitale Speisekarte</div>
+              <div class="pricing-price">499<span> CHF</span></div>
+              <div class="pricing-delivery">Lieferzeit: 5–7 Arbeitstage</div>
+              <ul class="pricing-features">
+                <li>Alles aus Light</li>
+                <li>Digitale Speisekarte</li>
+                <li>Bildergalerie</li>
+                <li>Kontaktformular</li>
+                <li>Erweitertes SEO</li>
+                <li>Mobil optimiert</li>
+              </ul>
+              <a href="kontakt.html?service=website-service" class="btn-primary">Jetzt anfragen</a>
+            </div>
+
+            <!-- Deluxe -->
+            <div class="pricing-card">
+              <div class="pricing-name">Deluxe</div>
+              <div class="pricing-tagline">Digitales Zuhause</div>
+              <div class="pricing-price">999<span> CHF</span></div>
+              <div class="pricing-delivery">Lieferzeit: 7–10 Arbeitstage</div>
+              <ul class="pricing-features">
+                <li>Alles aus Pro</li>
+                <li>Reservierungstool</li>
+                <li>Social Media Integration</li>
+                <li>Bis 5 Unterseiten</li>
+                <li>Vollständiges SEO</li>
+                <li>Google Business Beratung</li>
+              </ul>
+              <a href="kontakt.html?service=website-service" class="btn-outline">Jetzt anfragen</a>
+            </div>
+
+          </div>
+
+          <!-- Sorglos-Paket -->
+          <div class="sorglos-box">
+            <div class="sorglos-icon">🛡️</div>
+            <div>
+              <h3>Sorglos-Paket</h3>
+              <span class="price-inline">CHF 29 / Monat</span>
+              <p>Damit deine Website immer aktuell und technisch einwandfrei bleibt: bis zu 2 Inhaltsänderungen pro Monat (Texte, Zeiten, Preise), quartalsweiser technischer Check sowie schnelle Reaktionszeiten bei Fragen. Ergänzbar zu jedem Paket.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="service-sidebar">
+          <div class="sidebar-cta-card">
+            <div class="card-icon icon-ws" style="margin: 0 auto 20px;">WS</div>
+            <h3>Jetzt anfragen</h3>
+            <p>Welches Paket passt zu deinem Betrieb? Schreib uns — wir beraten dich kostenlos und unverbindlich.</p>
+            <a href="kontakt.html?service=website-service" class="btn-primary">Anfrage stellen</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER STUDIOS -->
+  <section class="related-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Weitere Leistungen</span>
+        <h2>Unsere anderen Studios</h2>
+      </div>
+      <div class="related-grid">
+        <a href="studio-next.html" class="service-card">
+          <div class="card-icon icon-sn">SN</div>
+          <h3>Studio Next</h3>
+          <p>Beratung für junge Gastronomieunternehmen — von der Konzeptentwicklung bis zur Eröffnung.</p>
+          <span class="card-link">Mehr erfahren</span>
+        </a>
+        <a href="vitis-sylvestris.html" class="service-card">
+          <div class="card-icon icon-vs">VS</div>
+          <h3>Vitis Sylvestris</h3>
+          <p>Weinberatung für Bars und Gastronomiebetriebe — Weinkarten, Schulungen und Winzervermittlung.</p>
+          <span class="card-link">Mehr erfahren</span>
+        </a>
+        <a href="foodtruck-connect.html" class="service-card">
+          <div class="card-icon icon-fc">FC</div>
+          <h3>Foodtruck Connect</h3>
+          <p>Plattform für Foodtruck-Betreiber und Veranstalter — Kommunikation, Planung und Vermittlung.</p>
+          <span class="card-link">Mehr erfahren</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2>Dein Gastrobetrieb. Online. Fertig.</h2>
+    <p>Wir entwickeln deine Website schnell, professionell und zu einem fairen Preis. Nimm jetzt Kontakt auf.</p>
+    <a href="kontakt.html?service=website-service" class="btn-white">Anfrage stellen</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo-text">STUDIO SILVESTRI</a>
+        <p>Beratung &amp; Konzepte für Gastronomie in Zürich und der Schweiz.</p>
+        <a href="mailto:info@studio-silvestri.ch">info@studio-silvestri.ch</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Navigation</div>
+        <a href="/">Home</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <a href="studio-silvestri.html">Studio Silvestri</a>
+        <a href="studio-next.html">Studio Next</a>
+        <a href="vitis-sylvestris.html">Vitis Sylvestris</a>
+        <a href="foodtruck-connect.html">Foodtruck Connect</a>
+        <a href="website-service.html">Website-Service</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Rechtliches</div>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Studio Silvestri. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
