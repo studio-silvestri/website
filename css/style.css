@@ -516,7 +516,7 @@ ul {
    hover: lift + border change
    ============================================================ */
 .services-section {
-  background: var(--light-gray);
+  background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 60px, #f9f9f9 calc(100% - 60px), #ffffff 100%);
 }
 
 .services-grid {
@@ -608,7 +608,7 @@ ul {
    About section — 2-col: text + quote card
    ============================================================ */
 .about-section {
-  background: var(--white);
+  background: linear-gradient(to bottom, #ffffff 50%, #fdf5f7 100%);
 }
 
 .about-grid {
@@ -762,7 +762,7 @@ ul {
    CTA Banner — bordeaux background, white text
    ============================================================ */
 .cta-banner {
-  background: var(--primary);
+  background: linear-gradient(to bottom, #7a3a52 0%, #5C2E3E 20%, #5C2E3E 75%, #2d1520 100%);
   color: var(--white);
   text-align: center;
   padding: 80px 24px;
@@ -1318,7 +1318,7 @@ input[type="checkbox"] {
    Footer — dark bg, 4-col grid, bottom bar
    ============================================================ */
 .site-footer {
-  background: #1a1a1a;
+  background: linear-gradient(to bottom, #2d1520 0%, #1a1a1a 80px);
   color: #cccccc;
   padding: 64px 24px 0;
 }
