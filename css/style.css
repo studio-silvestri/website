@@ -532,7 +532,8 @@ ul {
   border: 1px solid var(--border);
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
@@ -573,6 +574,7 @@ ul {
   color: var(--text-light);
   line-height: 1.65;
   margin-bottom: 16px;
+  flex-grow: 1;
 }
 
 .card-link {
