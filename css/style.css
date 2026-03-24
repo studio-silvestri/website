@@ -1569,3 +1569,319 @@ input[type="checkbox"] {
     font-size: 2.8rem;
   }
 }
+
+/* ============================================================
+   DESIGN UPGRADE 2026-03
+   Enhancements: display font, gradients, micro-interactions,
+   cursor spotlight, scroll animations, atmosphere & depth
+   ============================================================ */
+
+/* --- Extended variables --- */
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-card: 0 4px 16px rgba(92,46,62,0.07), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 14px 40px rgba(92,46,62,0.13), 0 4px 12px rgba(0,0,0,0.07);
+  --gradient-warm: radial-gradient(ellipse at 22% 55%, rgba(92,46,62,0.07) 0%, transparent 55%),
+                   linear-gradient(158deg, #fdf8f9 0%, #f0eaec 50%, #fafafa 100%);
+}
+
+/* --- Display font applied to major headings --- */
+.hero h1,
+.page-hero h1,
+.about-text h2,
+.section-header h2,
+.cta-banner h2,
+.profile-info h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* Quote blockquote — serif feels right here */
+.quote-card blockquote {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* Big stat numbers — serif numerals have gravitas */
+.stat-item strong,
+.hero-stat strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* --- Improved hero gradient --- */
+.hero {
+  background: var(--gradient-warm);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle ambient glow on right side of hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(92,46,62,0.055) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+/* --- Improved page-hero gradient --- */
+.page-hero {
+  background: var(--gradient-warm);
+}
+
+/* --- Hero stats — glassmorphism-lite --- */
+.hero-stats {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(92, 46, 62, 0.13);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* --- Services section gradient — more layered --- */
+.services-section {
+  background:
+    linear-gradient(to bottom,
+      #ffffff 0%,
+      #f7f2f3 80px,
+      #f4eef0 calc(100% - 80px),
+      #ffffff 100%
+    );
+}
+
+/* --- Service cards — premium hover with scale --- */
+.service-card {
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 0.32s ease,
+    transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.38s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px) scale(1.018);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(92, 46, 62, 0.28);
+}
+
+/* --- Buttons — richer hover with shadow --- */
+.btn-primary {
+  box-shadow: 0 2px 10px rgba(92,46,62,0.22);
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.28s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(92,46,62,0.32);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn-outline:hover {
+  box-shadow: 0 4px 16px rgba(92,46,62,0.22);
+  transform: translateY(-1px);
+}
+
+.btn-white {
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn-white:hover {
+  transform: translateY(-1px);
+}
+
+/* --- Nav links — animated underline from centre --- */
+.nav-menu > a:not(.nav-cta) {
+  position: relative;
+}
+
+.nav-menu > a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  right: 50%;
+  height: 1.5px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: left 0.24s ease, right 0.24s ease;
+}
+
+.nav-menu > a:not(.nav-cta):hover::after,
+.nav-menu > a:not(.nav-cta).active::after {
+  left: 14px;
+  right: 14px;
+}
+
+/* --- About section gradient --- */
+.about-section {
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(92,46,62,0.045) 0%, transparent 50%),
+    linear-gradient(to bottom, #ffffff 35%, #fdf5f7 100%);
+}
+
+/* --- Quote card — premium white card treatment --- */
+.quote-card {
+  background: #ffffff;
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 40px 36px;
+}
+
+/* --- Stats section — warmer tones --- */
+.stats-section {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(92,46,62,0.04) 0%, transparent 60%),
+    linear-gradient(to bottom, #fdf8f9 0%, #f5efef 50%, #fdf8f9 100%);
+}
+
+/* --- Vision blocks — refined hover --- */
+.vision-block {
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.32s ease, transform 0.32s ease;
+}
+
+.vision-block:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-3px);
+}
+
+/* --- Sidebar CTA card --- */
+.sidebar-cta-card {
+  background: linear-gradient(148deg, #ffffff 0%, #fdf8f9 100%);
+  border: 1px solid rgba(92,46,62,0.12);
+  box-shadow: var(--shadow-card);
+}
+
+/* --- CTA Banner — richer multi-stop gradient + noise --- */
+.cta-banner {
+  background:
+    radial-gradient(ellipse at 8% 60%, rgba(130,60,90,0.75) 0%, transparent 48%),
+    radial-gradient(ellipse at 92% 25%, rgba(40,16,28,0.85) 0%, transparent 48%),
+    linear-gradient(148deg, #7a3a52 0%, #5C2E3E 38%, #4a2430 68%, #2d1520 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  opacity: 0.045;
+  pointer-events: none;
+}
+
+/* Ensure CTA text + button stays above the noise overlay */
+.cta-banner h2,
+.cta-banner p,
+.cta-banner .btn-white,
+.cta-banner .btn-outline {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Footer gradient refinement --- */
+.site-footer {
+  background: linear-gradient(to bottom, #2d1520 0%, #1e1420 50px, #1a1420 100%);
+}
+
+/* --- Subtle grain texture on the entire page --- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  background-repeat: repeat;
+}
+
+/* --- Cursor spotlight element --- */
+#cursor-spotlight {
+  position: fixed;
+  top: -160px;
+  left: -160px;
+  width: 320px;
+  height: 320px;
+  pointer-events: none;
+  z-index: 9998;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 232, 220, 0.13) 0%,
+    rgba(92, 46, 62, 0.04) 42%,
+    transparent 70%
+  );
+  will-change: transform;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+@media (hover: none) {
+  #cursor-spotlight {
+    display: none;
+  }
+}
+
+/* --- Scroll animation base states --- */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.62s ease, transform 0.62s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.anim-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- prefers-reduced-motion: skip all motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #cursor-spotlight {
+    display: none !important;
+  }
+
+  .service-card,
+  .vision-block,
+  .btn-primary,
+  .btn-outline,
+  .btn-white {
+    transition: none !important;
+  }
+}
