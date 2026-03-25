@@ -282,12 +282,16 @@
         document.querySelectorAll('.ref-browser-content').forEach(function (container) {
           var iframe = container.querySelector('iframe');
           if (!iframe) return;
-          var scale = container.offsetWidth / 1440;
-          iframe.style.transform = 'scale(' + scale + ')';
+          var w = container.getBoundingClientRect().width;
+          if (w < 10) return;
+          iframe.style.transform = 'scale(' + (w / 1440) + ')';
         });
       }
-      scaleRefIframes();
+      document.addEventListener('DOMContentLoaded', scaleRefIframes);
+      window.addEventListener('load', scaleRefIframes);
       window.addEventListener('resize', scaleRefIframes);
+      setTimeout(scaleRefIframes, 100);
+      setTimeout(scaleRefIframes, 500);
     })();
   </script>
 </body>

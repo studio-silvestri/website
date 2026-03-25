@@ -1993,6 +1993,14 @@ body::after {
   pointer-events: none;
   transform-origin: top left;
   display: block;
+  /* CSS fallback scale (~605px container / 1440px desktop = 0.42) */
+  transform: scale(0.42);
+}
+
+@media (max-width: 900px) {
+  .ref-browser-content iframe {
+    transform: scale(0.26);
+  }
 }
 
 /* Project text */
