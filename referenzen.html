@@ -89,13 +89,13 @@
               <div class="ref-browser-url">zurlinde-winterthur.ch</div>
             </div>
             <div class="ref-browser-content">
-              <img
-                src="https://image.thum.io/get/width/800/crop/500/https://studio-silvestri.github.io/demo_zur_Linde/"
-                alt="Zur Linde – Demo-Website Vorschau"
+              <iframe
+                src="https://studio-silvestri.github.io/demo_zur_Linde/"
+                title="Zur Linde Demo-Website"
+                scrolling="no"
                 loading="lazy"
-                width="800"
-                height="500"
-              >
+                tabindex="-1"
+              ></iframe>
             </div>
           </div>
         </a>
@@ -157,13 +157,13 @@
               <div class="ref-browser-url">tischwerk-zuerich.ch</div>
             </div>
             <div class="ref-browser-content">
-              <img
-                src="https://image.thum.io/get/width/800/crop/500/https://studio-silvestri.github.io/demo_tischwerk/"
-                alt="Tischwerk – Demo-Website Vorschau"
+              <iframe
+                src="https://studio-silvestri.github.io/demo_tischwerk/"
+                title="Tischwerk Demo-Website"
+                scrolling="no"
                 loading="lazy"
-                width="800"
-                height="500"
-              >
+                tabindex="-1"
+              ></iframe>
             </div>
           </div>
         </a>
@@ -276,5 +276,19 @@
   <script src="js/app.js"></script>
   <script src="js/cursor-spotlight.js"></script>
   <script src="js/scroll-animations.js"></script>
+  <script>
+    (function () {
+      function scaleRefIframes() {
+        document.querySelectorAll('.ref-browser-content').forEach(function (container) {
+          var iframe = container.querySelector('iframe');
+          if (!iframe) return;
+          var scale = container.offsetWidth / 1440;
+          iframe.style.transform = 'scale(' + scale + ')';
+        });
+      }
+      scaleRefIframes();
+      window.addEventListener('resize', scaleRefIframes);
+    })();
+  </script>
 </body>
 </html>

@@ -1980,18 +1980,19 @@ body::after {
 .ref-browser-content {
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  position: relative;
 }
 
-.ref-browser-content img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.ref-browser-content iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 900px;
+  border: none;
+  pointer-events: none;
+  transform-origin: top left;
   display: block;
-  transition: transform 0.4s ease;
-}
-
-.ref-mockup-link:hover .ref-browser-content img {
-  transform: scale(1.03);
 }
 
 /* Project text */
@@ -2182,8 +2183,7 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ref-browser,
-  .ref-browser-content img {
+  .ref-browser {
     transition: none !important;
   }
 }
